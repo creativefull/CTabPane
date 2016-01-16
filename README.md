@@ -27,5 +27,25 @@ oke after it you can following code like this
 ```
 remember <code> id </code> on <code> div </code> must be same with <code> href </code> on your <code> a </code>
 
+## Add New Tab
+CTabPane now support to add dynamic tab with simple code . this is API for add new tab
+```
+$(selectorID).addTab(title, contentHTML);
+```
+**Example**
+```
+$("#panel1").addTab("New Tab", "<h1>Hi This is New Tab</h1>");
+```
+
+**Example using ajax***
+```
+$.ajax({
+  url : '/yourUrl',
+  success : function(msg) {
+    $("#panel1").addTab("New Tab", msg);
+  }
+})
+```
+
 ## Support
 * [CermaiJS](https://github.com/creativefull/cermai)
