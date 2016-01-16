@@ -1,0 +1,60 @@
+@import url('font-awesome.css');
+
+.ctab {
+	width: 100%;
+	transition : all 200ms ease-in-out;
+}
+.ctab-header {
+	background-color: #EEE;
+	border-bottom: 5px solid#009688;
+	transition : all 200ms ease-in-out;
+}
+.ctab-header > a {
+	color : #FFF;
+	background-color: #263238;
+	padding: 10px;
+	font-family: 'Roboto Light';
+	text-transform: uppercase;
+	text-decoration: none;
+	display: inline-block;
+	transition : all 200ms ease-in-out;
+}
+.ctab-header > a > i {
+	z-index: 10;
+	transition : all 200ms ease-in-out;
+}
+.ctab-header > a.active {
+	background-color: #009688;
+	color: #FFF;
+	transition : all 200ms ease-in-out;	
+}
+
+.ctab-content {
+	background-color: #e8eaf6;
+	padding: 10px;
+	transition : all 200ms ease-in-out;
+}
+.ctab-content > div {
+	display: none;
+	transition : all 200ms ease-in-out;
+}
+.ctab-content > div.active {
+	display: block;
+	transition : all 200ms ease-in-out;
+}
+
+
+
+@font-face {
+	font-family: 'Roboto Black';
+	src : url(../fonts/Roboto-Black.ttf);
+}
+
+@font-face {
+	font-family: 'Roboto Light';
+	src : url(../fonts/Roboto-Light.ttf);
+}
+@font-face {
+	font-family: 'Roboto Thin';
+	src : url(../fonts/Roboto-Thin.ttf);
+}
