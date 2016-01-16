@@ -8,11 +8,38 @@
 	</head>
 
 	<body>
-		<button onclick="addTab()">NEW TAB</button>
+		<button onclick="addTab('#panel1')">NEW TAB</button>
 		<br>
 		<br>
 
-		<div class="ctab">
+		<div class="ctab" id="panel1">
+			<div class="ctab-header">
+				<a href="#tab1" class="active">Tab 1 <i class="fa fa-times-circle" data-dismis="close"></i></a>
+				<a href="#tab2">Tab 2 <i class="fa fa-times-circle" data-dismis="close"></i></a>
+			</div>
+
+			<div class="ctab-content">
+				<div id="tab1" class="active">
+					<div class="row">
+						 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id mi posuere, placerat elit eu, elementum nisi. Duis gravida pretium felis, sodales sodales tellus fringilla sit amet. Nulla rutrum lorem non mauris aliquam lobortis. Nullam arcu ligula, lobortis sit amet orci et, varius vestibulum lacus. Curabitur sit amet cursus nunc, id accumsan ligula. Nulla sit amet nulla at metus viverra hendrerit in eget nisl. In non euismod elit. Aliquam porttitor viverra ex sed ultricies. Morbi elementum tempus est, sit amet convallis mi vulputate non. Mauris blandit metus a justo rhoncus, nec interdum lacus imperdiet.
+
+						Ut mattis felis vitae turpis vestibulum, vel tincidunt urna feugiat. Duis rhoncus gravida mi, at consectetur nisi dignissim et. Phasellus fermentum purus ac risus pretium finibus. Aenean in urna lobortis, vehicula risus ut, pretium felis. Praesent sit amet nunc vestibulum magna pharetra varius. Sed pulvinar nunc a nunc bibendum, non tempus est luctus. Phasellus tortor urna, dapibus id sem quis, feugiat elementum massa. Donec id vulputate felis. Quisque metus felis, dictum a elit interdum, volutpat rutrum ex. Praesent consequat mauris non tortor pulvinar sodales. Quisque nec ligula fermentum, eleifend ipsum sit amet, pretium ante. In mollis ultrices massa, posuere auctor tellus fringilla fermentum. Morbi placerat odio et purus blandit, at ullamcorper mauris convallis. Aliquam at fringilla est. Etiam quis massa ligula. Integer id varius nulla. 
+					</div>
+				</div>
+				<div id="tab2">
+					<div class="row">
+						<h1>Content Tab 2</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<br>
+		<br>
+		<button onclick="addTab('#panel2')">NEW TAB</button>
+		<br>
+		<br>		
+		<div class="ctab" id="panel2">
 			<div class="ctab-header">
 				<a href="#tab1" class="active">Tab 1 <i class="fa fa-times-circle" data-dismis="close"></i></a>
 				<a href="#tab2">Tab 2 <i class="fa fa-times-circle" data-dismis="close"></i></a>
@@ -35,8 +62,8 @@
 		</div>
 
 		<script>
-			function addTab() {
-				$(".cTab").addTab("New Tab", "<h1>Content New Tab</h1>");
+			function addTab(panel) {
+				$(panel).addTab("New Tab", "<h1>Content New Tab</h1>");
 			}
 		</script>
 	</body>

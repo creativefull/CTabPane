@@ -5,15 +5,17 @@ $(function() {
 	btnClick();
 })
 function clickTab() {
-	$(".ctab .ctab-header a").click(function() {
+	$(".ctab-header a").click(function() {
 		var selector = $(this);
-		$(".ctab .ctab-header a").removeClass("active");
+		var parent = selector.parent().parent();
+		parent.find(".ctab-header a").removeClass("active");
 		selector.addClass("active");
-		$(".ctab .ctab-content > div").removeClass("active");
-		$(".ctab .ctab-content > div" + selector.attr("href")).addClass("active");
+		parent.find(".ctab-content > div").removeClass("active");
+		parent.find(".ctab-content > div" + selector.attr("href")).addClass("active");
 		return false;
 	})	
 }
+
 $.fn.addTab = function(title, content) {
 	totalTab += 1;
 	var selector = $(this);
@@ -36,22 +38,23 @@ $.fn.addTab = function(title, content) {
 function closeTab(element) {
 	var prev = $(element).parent().prev("a");
 	var next = $(element).parent().next("a");
-	$(".ctab .ctab-header a").unbind("click");
+	var parent = $(element).parent().parent().parent();	
+	parent.find(".ctab-header a").unbind("click");
 
 	$(element).parent().remove();
-	$(".ctab .ctab-content > div" + $(element).parent().attr("href")).remove();
+	parent.find(".ctab-content > div" + $(element).parent().attr("href")).remove();
 
 	if ($(element).parent().hasClass("active")) {
-		$(".ctab .ctab-header a").removeClass("active");
-		$(".ctab .ctab-content > div").removeClass("active");
+		parent.find(".ctab-header a").removeClass("active");
+		parent.find(".ctab-content > div").removeClass("active");
 		if (prev.length != 0) {
-			$("a[href=\"" + prev.attr("href") + "\"]").addClass("active");
-			$(".ctab .ctab-content > div" + prev.attr("href")).addClass("active");
+			parent.find("a[href=\"" + prev.attr("href") + "\"]").addClass("active");
+			parent.find(".ctab-content > div" + prev.attr("href")).addClass("active");
 		}
 		else if (prev.length == 0) {
 			if (next.length != 0) {
-				$("a[href=\"" + next.attr("href") + "\"]").addClass("active");
-				$(".ctab .ctab-content > div" + next.attr("href")).addClass("active");			
+				parent.find("a[href=\"" + next.attr("href") + "\"]").addClass("active");
+				parent.find(".ctab-content > div" + next.attr("href")).addClass("active");			
 			}
 		}		
 	}
