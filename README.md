@@ -25,7 +25,7 @@ oke after it you can following code like this
   </div>
 </div>
 ```
-remember <code> <div id='tab1'> </code> must be same with <code> href </code> on your <code> <a> </code>
+remember <code> id </code> on <code> div </code> must be same with <code> href </code> on your <code> a </code>
 
 ## Support
 * [CermaiJS](https://github.com/creativefull/cermai)
